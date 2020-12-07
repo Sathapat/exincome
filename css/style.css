@@ -1,0 +1,37 @@
+
+.bg-sky{
+    background-color: #00adb5;
+}
+
+.bg-darksky{
+    background-color: #222831;
+}
+
+.bg-darklight{
+    background-color: #393e46;
+}
+
+.bg-darkgrey{
+    background-color: #777777;
+}
+
+
+.menu-aside a{
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: 15px;
+}
+.menu-aside a:hover{
+    background-color: #393e46;
+    text-decoration: none;
+    color: white;
+}
+
+img {
+    fill: green;
+  }
+
+*{
+    font-family: 'Kanit', sans-serif;
+}
