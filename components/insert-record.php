@@ -33,7 +33,7 @@
 
         <div class="row mt-3 mb-3">
             <div class="col">
-                <input type="submit" class="btn btn-success" name="submit" value="บันทึก">
+                <input type="submit" class="btn btn-success" name="insert-btn" value="บันทึก">
             </div>
         </div>
     </form>

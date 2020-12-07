@@ -19,6 +19,12 @@
             return $result;
         }
 
+        public function search_record($date){
+            $result = mysqli_query($this->conn, "SELECT * FROM record INNER JOIN member ON record.m_id = member.m_id 
+                                    WHERE record.r_date LIKE '%$date%' ORDER BY record.r_id DESC");
+            return $result;
+        }
+
         public function sum_income(){
             return $result = mysqli_query($this->conn, "SELECT sum(r_income) AS sum_income  FROM record");
         }
@@ -35,7 +41,22 @@
 
         public function insert_record($date, $time, $income, $expense){
             $result = mysqli_query($this->conn, "INSERT INTO record (r_date, r_time, r_income, r_expense, m_id)VALUES('$date', '$time', '$income', '$expense', '1')");
-            return $result;
+            if($result){
+                echo "<script>window.location.href = '../index.php'</script>";
+            }else{
+                echo "<script>alert('บันทึกไม่สำเร็จ')</script>";
+                echo "<script>window.location.href = '../index.php'</script>";
+            }
+        }
+
+        public function delete_record($r_id){
+            $result = mysqli_query($this->conn, "DELETE FROM record WHERE r_id = '$r_id'");
+            if($result){
+                echo "<script>window.location.href = '../index.php'</script>";
+            }else{
+                echo "<script>alert('ลบสำเร็จ')</script>";
+                echo "<script>window.location.href = '../index.php'</script>";
+            }
         }
 
     }
